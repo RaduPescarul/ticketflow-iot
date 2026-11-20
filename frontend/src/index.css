@@ -1,0 +1,351 @@
+:root,
+html[data-theme="light"] {
+    --font-apple-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    --font-apple-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --bg-page: #dce2ec;
+    --text-primary: #07090e;
+    --text-secondary: #1e293b;
+    --text-muted: #475569;
+
+    /* iOS 26 Clear Liquid Glass (Light - High-Clarity Refraction) */
+    --glass-bg: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.52) 0%,
+            rgba(255, 255, 255, 0.22) 50%,
+            rgba(255, 255, 255, 0.38) 100%
+    );
+    --glass-hover: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.66) 0%,
+            rgba(255, 255, 255, 0.32) 50%,
+            rgba(255, 255, 255, 0.50) 100%
+    );
+    --glass-border: rgba(255, 255, 255, 0.92);
+    --glass-shadow:
+            0 24px 48px -12px rgba(15, 23, 42, 0.16),
+            inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+            inset 1.5px 0 1.5px 0 rgba(255, 255, 255, 0.85),
+            inset 0 -1.5px 2px 0 rgba(15, 23, 42, 0.12),
+            inset -1.5px 0 2px 0 rgba(255, 255, 255, 0.75);
+
+    /* Nested Glass Pill & Button Surfaces (Light) */
+    --pill-glass-bg: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.72) 0%,
+            rgba(255, 255, 255, 0.36) 100%
+    );
+    --pill-glass-hover: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.88) 0%,
+            rgba(255, 255, 255, 0.54) 100%
+    );
+    --pill-glass-shadow:
+            0 8px 20px rgba(15, 23, 42, 0.12),
+            inset 0 1px 1px rgba(255, 255, 255, 1),
+            inset 0 -1px 1px rgba(15, 23, 42, 0.14);
+
+    --well-bg: rgba(255, 255, 255, 0.28);
+    --well-border: rgba(255, 255, 255, 0.78);
+    --well-shadow:
+            inset 0 1px 2px rgba(15, 23, 42, 0.08),
+            0 1px 0 rgba(255, 255, 255, 0.85);
+
+    --glow-color: rgba(255, 255, 255, 0.85);
+    --divider: rgba(15, 23, 42, 0.12);
+}
+
+html.dark,
+html[data-theme="dark"] {
+    --bg-page: #050507;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.72);
+    --text-muted: rgba(255, 255, 255, 0.48);
+
+    /* iOS 26 Clear Liquid Glass (Dark) */
+    --glass-bg: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.085) 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            rgba(255, 255, 255, 0.06) 100%
+    );
+    --glass-hover: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.04) 50%,
+            rgba(255, 255, 255, 0.09) 100%
+    );
+    --glass-border: rgba(255, 255, 255, 0.24);
+    --glass-shadow:
+            0 30px 60px -12px rgba(0, 0, 0, 0.75),
+            inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.55),
+            inset 1.5px 0 1px 0 rgba(255, 255, 255, 0.30),
+            inset 0 -1.5px 2px 0 rgba(255, 255, 255, 0.22),
+            inset -1.5px 0 2px 0 rgba(255, 255, 255, 0.18);
+
+    /* Nested Glass Pill & Button Surfaces (Dark) */
+    --pill-glass-bg: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.14) 0%,
+            rgba(255, 255, 255, 0.04) 55%,
+            rgba(255, 255, 255, 0.10) 100%
+    );
+    --pill-glass-hover: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(255, 255, 255, 0.08) 55%,
+            rgba(255, 255, 255, 0.16) 100%
+    );
+    --pill-glass-shadow:
+            0 10px 24px rgba(0, 0, 0, 0.45),
+            inset 0 1px 1px rgba(255, 255, 255, 0.65),
+            inset 0 -1px 1px rgba(255, 255, 255, 0.25);
+
+    --well-bg: rgba(255, 255, 255, 0.045);
+    --well-border: rgba(255, 255, 255, 0.16);
+    --well-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.22),
+            inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+
+    --glow-color: rgba(255, 255, 255, 0.16);
+    --divider: rgba(255, 255, 255, 0.14);
+}
+
+/* Global Apple Typography Enforcement */
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--font-apple-sans) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-apple-sans) !important;
+    letter-spacing: -0.024em;
+}
+
+.font-mono,
+code,
+pre {
+    font-family: var(--font-apple-mono) !important;
+    font-variant-numeric: tabular-nums;
+}
+
+body {
+    background-color: var(--bg-page) !important;
+    color: var(--text-primary) !important;
+    overflow-x: hidden;
+    letter-spacing: -0.011em;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.theme-text { color: var(--text-primary) !important; }
+.theme-text-secondary { color: var(--text-secondary) !important; }
+.theme-text-muted { color: var(--text-muted) !important; }
+.theme-divider { border-color: var(--divider) !important; }
+
+/* Monochrome Fluid Background */
+.mono-liquid-stage {
+    background: radial-gradient(circle at 50% 45%, #eef2f6 0%, #b8c2d1 100%) !important;
+    transition: background 0.4s ease;
+}
+
+html.dark .mono-liquid-stage,
+html[data-theme="dark"] .mono-liquid-stage {
+    background: radial-gradient(circle at 50% 45%, #16171d 0%, #030304 100%) !important;
+}
+
+.mono-wave {
+    position: absolute;
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+    filter: blur(48px);
+    will-change: transform;
+}
+
+/* Light Mode Sculpted Charcoal & Pearl Ribbons */
+.wave-1 {
+    width: 72vw;
+    height: 72vw;
+    top: -20%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.55) 0%, rgba(148, 163, 184, 0.28) 55%, transparent 75%);
+    animation: liquidDrift1 18s ease-in-out infinite alternate;
+}
+
+.wave-2 {
+    width: 68vw;
+    height: 68vw;
+    bottom: -22%;
+    right: -8%;
+    background: radial-gradient(circle, rgba(51, 65, 85, 0.50) 0%, rgba(100, 116, 139, 0.24) 55%, transparent 75%);
+    animation: liquidDrift2 22s ease-in-out infinite alternate;
+}
+
+.wave-3 {
+    width: 55vw;
+    height: 55vw;
+    top: 26%;
+    left: 24%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(203, 213, 225, 0.35) 60%, transparent 75%);
+    animation: liquidDrift3 15s ease-in-out infinite alternate;
+}
+
+html.dark .wave-1,
+html[data-theme="dark"] .wave-1 {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.26) 0%, rgba(130, 135, 145, 0.10) 55%, transparent 75%);
+}
+
+html.dark .wave-2,
+html[data-theme="dark"] .wave-2 {
+    background: radial-gradient(circle, rgba(210, 215, 225, 0.22) 0%, rgba(90, 95, 105, 0.08) 55%, transparent 75%);
+}
+
+html.dark .wave-3,
+html[data-theme="dark"] .wave-3 {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.20) 0%, rgba(120, 125, 135, 0.06) 55%, transparent 75%);
+}
+
+@keyframes liquidDrift1 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50% { transform: translate(12vw, 8vh) rotate(90deg) scale(1.12); }
+    100% { transform: translate(4vw, 18vh) rotate(180deg) scale(0.95); }
+}
+
+@keyframes liquidDrift2 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1.05); }
+    50% { transform: translate(-14vw, -10vh) rotate(-110deg) scale(0.92); }
+    100% { transform: translate(-5vw, -20vh) rotate(-200deg) scale(1.14); }
+}
+
+@keyframes liquidDrift3 {
+    0% { transform: translate(-6vw, 4vh) scale(0.95); }
+    100% { transform: translate(10vw, -8vh) scale(1.15); }
+}
+
+/*IOS-inspired glass pannels & cards*/
+.saglix-glass,
+.clean-glass-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--glass-bg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(20px) saturate(190%) contrast(108%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(190%) contrast(108%) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clean-glass-card:hover {
+    transform: translateY(-2px);
+    background: var(--glass-hover) !important;
+}
+
+/* Specular Cursor Refraction Glow */
+.saglix-glass::before,
+.clean-glass-card::before {
+    content: '';
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+    filter: blur(32px);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.saglix-glass:hover::before,
+.clean-glass-card:hover::before {
+    opacity: 1;
+}
+
+.saglix-glass > *,
+.clean-glass-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Nested liquid glass controls*/
+.clean-well {
+    background: var(--well-bg) !important;
+    border: 1px solid var(--well-border) !important;
+    box-shadow: var(--well-shadow) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(14px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+}
+
+.clean-well::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Primary Liquid Glass Pill Button */
+.apple-pill,
+.theme-tab-active {
+    background: var(--pill-glass-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--pill-glass-shadow) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.apple-pill:hover,
+.theme-tab-active:hover {
+    background: var(--pill-glass-hover) !important;
+    transform: scale(1.02);
+}
+
+.apple-pill:active {
+    transform: scale(0.98);
+}
+
+/* Secondary Glass Chips & Inactive Tabs */
+.theme-chip {
+    background: var(--well-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--well-border) !important;
+    box-shadow: inset 0 1px 0.5px rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-chip:hover {
+    background: var(--pill-glass-bg) !important;
+}
+
+.theme-tab-inactive {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid transparent !important;
+}
+
+.theme-tab-inactive:hover {
+    color: var(--text-primary) !important;
+    background: var(--well-bg) !important;
+}
+
+/* Turnstile Actuator */
+.turnstile-arm {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    transform-origin: left center;
+}
+.turnstile-open {
+    transform: rotate(-72deg);
+}
